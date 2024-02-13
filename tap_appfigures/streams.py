@@ -70,17 +70,17 @@ class ProductsStream(AppFiguresStream):
         ),
         th.Property(
             "release_date",
-            th.DateType,
+            th.DateTimeType,
             # description="Role granted to the user querying the account"
         ),
         th.Property(
             "added_date",
-            th.DateType,
+            th.DateTimeType,
             # description="Role granted to the user querying the account"
         ),
         th.Property(
             "updated_date",
-            th.DateType,
+            th.DateTimeType,
             # description="Role granted to the user querying the account"
         ),
         th.Property(
@@ -142,13 +142,13 @@ class SubscriptionsStream(AppFiguresStream):
         th.Property("all_active_subscriptions", th.IntegerType),
         th.Property("active_subscriptions", th.IntegerType),
         th.Property("paying_subscriptions", th.IntegerType),
-        th.Property("actual_revenue", th.NumberType),
-        th.Property("mrr", th.NumberType),
-        th.Property("gross_mrr", th.NumberType),
-        th.Property("gross_revenue", th.NumberType),
+        th.Property("actual_revenue", th.StringType),
+        th.Property("mrr", th.StringType),
+        th.Property("gross_mrr", th.StringType),
+        th.Property("gross_revenue", th.StringType),
         th.Property("activations", th.IntegerType),
         th.Property("cancelations", th.IntegerType),
-        th.Property("churn", th.NumberType),
+        th.Property("churn", th.StringType),
         th.Property("first_year_subscribers", th.IntegerType),
         th.Property("non_first_year_subscribers", th.IntegerType),
         th.Property("active_discounted_subscriptions", th.IntegerType),

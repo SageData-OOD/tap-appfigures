@@ -7,16 +7,16 @@ from singer_sdk import typing as th  # JSON schema typing helpers
 
 from tap_appfigures.streams import (
     ProductsStream,
-    # TransactionsStream,
-    # PublishersStream,
-    # ReportByPublisherStream,
+    SubscriptionsStream,
+    # RevenueStream,
+    # SalesStream,
 )
 
 STREAM_TYPES = [
     ProductsStream,
-    # TransactionsStream,
-    # PublishersStream,
-    # ReportByPublisherStream,
+    SubscriptionsStream,
+    # RevenueStream,
+    # SalesStream,
 ]
 
 
@@ -37,10 +37,10 @@ class TapAppFigures(Tap):
             description="The earliest transaction date to sync"
         ),
         th.Property(
-            "properties",
-            th.StringType,
-            default="Legacy",
-            description="Legacy cmd line arg"
+            "end_date",
+            th.DateTimeType,
+            default="2016-01-01T00:00:00Z",
+            description="The oldest transaction date to sync"
         ),
     ).to_dict()
 
